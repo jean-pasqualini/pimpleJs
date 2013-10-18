@@ -43,14 +43,11 @@
             ServiceContainer.$("services")[serviceName] = handle;
         },
 
-        "public share" : function(handle)
+        "public share" : function(name, handle)
         {
-            var shareInstance = new ServiceContainerShare(handle);
-
-            return shareInstance;
+              return this.set(name, new ServiceContainerShare(handle));
         },
 
 
         "public static services" : []
     });
-
